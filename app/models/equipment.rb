@@ -1,6 +1,20 @@
+# == Schema Information
+#
+# Table name: equipment
+#
+#  id          :integer          not null, primary key
+#  title       :string
+#  description :string
+#  category    :string
+#  available   :boolean
+#  price       :decimal(, )
+#  user_id     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class Equipment < ApplicationRecord
   belongs_to :user
-  has_many :users, through :rentals
 
   # validates :title, presence: true
   # validates :description, presence: true
@@ -8,12 +22,4 @@ class Equipment < ApplicationRecord
   # validates :available, presence: true
   # validates :price, presence: true
   # validates :user, presence: true
-
-
-  t.string   "title"
-    t.string   "description"
-    t.string   "category"
-    t.boolean  "available"
-    t.decimal  "price"
-    t.integer  "user_id"
 end
