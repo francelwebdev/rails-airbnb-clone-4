@@ -1,1 +1,29 @@
-// Your footer style
+#footer {
+  background: #474848;
+  padding: 20px 0;
+  color: #CCCCCC;
+}
+#footer p {
+  margin-top: 17px;
+  font-size: 15px;
+}
+#footer ul {
+  margin-top: 10px;
+}
+#footer a {
+  color: #CCCCCC;
+  font-size: 15px;
+  transition: color 0.5s ease;
+}
+#footer a:hover{
+  color: #329DFB;
+}
+
+#footer i {
+  font-size: 25px;
+}
+
+.list-inline > li {
+  margin: 8px;
+}
+
