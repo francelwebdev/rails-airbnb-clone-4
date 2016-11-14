@@ -19,6 +19,7 @@ gem 'autoprefixer-rails'
 gem 'devise'
 
 group :development, :test do
+  gem 'annotate'
   gem 'binding_of_caller'
   gem 'better_errors'
 
