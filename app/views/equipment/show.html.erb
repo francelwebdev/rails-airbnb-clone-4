@@ -1,8 +1,37 @@
-<h2>Equipment info:</h2>
-<ul>
-  <li><%= @equipment.title %></li>
-  <li><%= @equipment.description %></li>
-  <li>User: <%= @equipment.user.first_name.capitalize + " " + @equipment.user.last_name.capitalize %></li>
-</ul>
+<div class="container padded">
+  <div class="row">
+    <div class="col-xs-12 col-sm-5">
+      <img src="http://placehold.it/400x400" alt="", class="show-image">
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card-info text-xs-center", id="eq-info">
+        <div class="card-header">
+          <h4 class="card-title">Equipment info:</h4>
+        </div>
+        <ul id="description">
+          <li>Title: <%= @equipment.title %></li>
+          <li>Description: <%= @equipment.description %></li>
+          <li>Owner: <%= @equipment.user.first_name.capitalize + " " + @equipment.user.last_name.capitalize %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <div class="card-info text-xs-center" id="rent">
+        <div class="card-header", id="rent-header">
+          <h4>Rent overview</h4>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">Equipment:  </h4>
+          <h4 class="card-title">Rental period:  </h4>
+          <h4 class="card-title">Total price:  </h4>
+          <%= link_to "Rent now!", new_user_session_path ,class: "btn btn-danger"  %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 
