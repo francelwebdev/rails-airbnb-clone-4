@@ -1,5 +1,5 @@
 <% if @equipment.user == current_user %>
-  <%= link_to "Edit this listing", edit_account_equipment_path(@equipment), class: 'btn btn-warning'  %>
+<%= link_to "Edit this listing", edit_account_equipment_path(@equipment), class: 'btn btn-warning'  %>
 <% end %>
 <div class="container padded">
   <div class="row">
@@ -18,21 +18,36 @@
         </ul>
       </div>
     </div>
+
+    <% if current_user %>
     <div class="col-xs-12 col-sm-3">
       <div class="card-info text-xs-center" id="rent">
-        <div class="card-header", id="rent-header">
-          <h4>Rent overview</h4>
+        <form>
+          <label for="start_date">Select your dates</label>
+          <input type="date" class="form-control" id="start_date" placeholder="Start Date">
         </div>
+        <div class="form-group">
+          <input type="time" class="form-control" id="start_time" placeholder="Start Date">
+        </div>
+        <div class="form-group">
+          <input type="time" class="form-control" id="end" placeholder="End Time">
+        </div>
+        <%= link_to "Rent now!", "#" ,class: "btn btn-danger"  %>
+      </form>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>
+
+<!--         <div class="card-header", id="rent-header">
+ --><!--           <h4>Rent overview</h4>
+        </div
         <div class="card-block">
           <h4 class="card-title">Equipment:  </h4>
           <h4 class="card-title">Rental period:  </h4>
-          <h4 class="card-title">Total price:  </h4>
-          <%= link_to "Rent now!", new_user_session_path ,class: "btn btn-danger"  %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+          <h4 class="card-title">Total price:  </h4> -->
+
 
 
 
