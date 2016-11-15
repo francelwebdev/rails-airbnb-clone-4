@@ -3,13 +3,24 @@
 <h3>Your listings:</h3>
 <div class="container">
   <div class="row">
-    <% current_user.equipment.each do %>
+    <% current_user.equipment.each do |e| %>
     <div class="col-xs-12 col-sm-4">
-      <%= current_user.first_name %>
+
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'banner.jpg' %>);">
+        <div class="card-category"><%= e.title %></div>
+        <div class="card-description">
+          <p><%= e.description %></p>
+        </div>
+        <img class="card-user avatar" src="#">
+        <%= link_to "", account_equipment_path(e), class: 'card-link'  %>
+      </div>
     </div>
     <% end %>
   </div>
 </div>
+
+
+
 
 
 
