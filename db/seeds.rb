@@ -1,12 +1,13 @@
 Equipment.destroy_all
-alex = User.create(first_name:"alex", last_name:"alex", email:"alex@me.com", password:"alfsnjfsdfndsfex")
-Equipment.create(title: 'Drum Kit', description: 'Yahama Drum Kit', user: User.first)
+User.destroy_all
+alex = User.create(first_name:"alex", last_name:"spencer", email:"alex@me.com", password:"alfsnjfsdfndsfex")
+Equipment.create(title: 'Drum Kit', description: 'Yahama Drum Kit', user: alex)
 
-bob = User.create(first_name:"bob", last_name:"alex", email:"alex@me.com", password:"bla")
-Equipment.create(title: 'Guitar', description: 'Gibson electronic guitar', user: User.first)
+bob = User.create(first_name:"bob", last_name:"fox", email:"bob@me.com", password:"bla")
+Equipment.create(title: 'Guitar', description: 'Gibson electronic guitar', user: bob)
 
-josh = User.create(first_name:"josh", last_name:"josh", email:"josh@me.com", password:"blabla")
-Equipment.create(title: 'Bass guitar', description: 'Some description', user: User.first)
+josh = User.create(first_name:"josh", last_name:"wilson", email:"josh@me.com", password:"blabla")
+Equipment.create(title: 'Bass guitar', description: 'Some description', user: josh)
 
 
 # Equipment.create(title: 'Acousting Guitar', description: 'Gibson acoustinc guitar')

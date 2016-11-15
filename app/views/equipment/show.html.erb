@@ -1,6 +1,8 @@
-<h1>Equipment#show</h1>
-<p>Find me in app/views/equipment/show.html.erb</p>
+<h2>Equipment info:</h2>
+<ul>
+  <li><%= @equipment.title %></li>
+  <li><%= @equipment.description %></li>
+  <li>User: <%= @equipment.user.first_name.capitalize + " " + @equipment.user.last_name.capitalize %></li>
+</ul>
 
 
-
-<%= @equipment.title %>
