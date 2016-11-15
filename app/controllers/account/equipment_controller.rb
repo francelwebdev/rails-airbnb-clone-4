@@ -17,7 +17,7 @@ class Account::EquipmentController < Account::AccountController
     @equipment = Equipment.new(equipment_params)
     @equipment.user = current_user
     if @equipment.save
-      redirect_to account_equipment_path(@equipment)
+      redirect_to equipment_path(@equipment)
     else
       render :new
     end
