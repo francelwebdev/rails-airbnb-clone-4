@@ -27,6 +27,12 @@ class Account::EquipmentController < Account::AccountController
   end
 
   def update
+    @equipment.update(equipment_params)
+    if @equipment.save
+      redirect_to equipment_path(@equipment)
+    else
+      render :edit
+    end
   end
 
   def destroy
