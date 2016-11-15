@@ -17,8 +17,8 @@ class Equipment < ApplicationRecord
   belongs_to :user
   has_many :users, through: :rentals
 
-  # validates :title, presence: true
-  # validates :description, presence: true
+  validates :title, presence: true
+  validates :description, presence: true
   # validates :category, presence: true
   # validates :available, presence: true
   # validates :price, presence: true

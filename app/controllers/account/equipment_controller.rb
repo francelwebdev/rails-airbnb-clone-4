@@ -1,6 +1,6 @@
 class Account::EquipmentController < Account::AccountController
 
-  before_action :find_equipment
+  before_action :find_equipment, only: [:show, :edit, :update, :destroy]
 
   def index
     @equipment = current_user.equipment.all
@@ -10,9 +10,17 @@ class Account::EquipmentController < Account::AccountController
   end
 
   def new
+    @equipment = Equipment.new
   end
 
   def create
+    @equipment = Equipment.new(equipment_params)
+    @equipment.user = current_user
+    if @equipment.save
+      redirect_to account_equipment_path(@equipment)
+    else
+      render :new
+    end
   end
 
   def edit
