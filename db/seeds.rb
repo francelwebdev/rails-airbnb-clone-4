@@ -3,7 +3,7 @@ User.destroy_all
 alex = User.create(first_name:"alex", last_name:"spencer", email:"alex@me.com", password:"alfsnjfsdfndsfex")
 Equipment.create(title: 'Drum Kit', description: 'Yahama Drum Kit', user: alex)
 
-bob = User.create(first_name:"bob", last_name:"fox", email:"bob@me.com", password:"bla")
+bob = User.create(first_name:"bob", last_name:"fox", email:"bob@me.com", password:"blablabla")
 Equipment.create(title: 'Guitar', description: 'Gibson electronic guitar', user: bob)
 
 josh = User.create(first_name:"josh", last_name:"wilson", email:"josh@me.com", password:"blabla")
