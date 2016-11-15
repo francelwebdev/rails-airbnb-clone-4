@@ -1,0 +1,10 @@
+<h2>Available Equipment:</h2>
+<ol>
+  <% @equipment.each do |equipment| %>
+  <p>Title: <%= equipment.title %></p>
+  <p>Description: <%= equipment.description %></p>
+  <p>User: <%= equipment.user.first_name %></p>
+
+  <% end %>
+</ol>
+
