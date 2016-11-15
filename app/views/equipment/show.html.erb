@@ -1,6 +1,7 @@
 <% if @equipment.user == current_user %>
-  <%= link_to "Edit this listing", edit_account_equipment_path(@equipment), class: 'btn btn-warning'  %>
+<%= link_to "Edit this listing", edit_account_equipment_path(@equipment), class: 'btn btn-warning'  %>
 <% end %>
+
 <div class="container padded">
   <div class="row">
     <div class="col-xs-12 col-sm-5">
@@ -18,21 +19,43 @@
         </ul>
       </div>
     </div>
+
     <div class="col-xs-12 col-sm-3">
-      <div class="card-info text-xs-center" id="rent">
-        <div class="card-header", id="rent-header">
-          <h4>Rent overview</h4>
+      <div class="card-header text-center", id="rent-header">
+        <form>
+          <div class="form-group">
+            <label for="start_date">Select date and time</label>
+          </div>
+          <hr>
+        <div class="form-group">
+          <input type="date" class="form-control" id="start_date" placeholder="Start Date">
         </div>
-        <div class="card-block">
-          <h4 class="card-title">Equipment:  </h4>
-          <h4 class="card-title">Rental period:  </h4>
-          <h4 class="card-title">Total price:  </h4>
-          <%= link_to "Rent now!", new_user_session_path ,class: "btn btn-danger"  %>
+        <div class="form-group">
+          <input type="time" class="form-control" id="start_time" placeholder="Start Date">
         </div>
-      </div>
+        <div class="form-group">
+          <input type="time" class="form-control" id="end" placeholder="End Time">
+        </div>
+        <% unless current_user %>
+        <%= link_to "Select", new_user_session_path, class: "btn btn-danger"  %>
+        <% else %>
+        <%= link_to "Select", "#", class: "btn btn-danger"  %>
+          <% end %>
+      </form>
     </div>
   </div>
 </div>
+</div>
+
+
+<!--         <div class="card-header", id="rent-header">
+ --><!--           <h4>Rent overview</h4>
+        </div
+        <div class="card-block">
+          <h4 class="card-title">Equipment:  </h4>
+          <h4 class="card-title">Rental period:  </h4>
+          <h4 class="card-title">Total price:  </h4> -->
+
 
 
 
