@@ -1,9 +1,9 @@
-class EquipmentController < ApplicationController
+class Account::EquipmentController < Account::AccountController
 
   before_action :find_equipment
 
   def index
-    @equipment = Equipment.all
+    @equipment = current_user.equipment.all
   end
 
   def show
@@ -31,6 +31,6 @@ class EquipmentController < ApplicationController
   end
 
   def find_equipment
-    @equipment = Equipment.find(params[:id])
+    @equipment = current_user.equipment.find(params[:id])
   end
 end

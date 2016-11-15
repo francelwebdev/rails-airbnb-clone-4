@@ -1,4 +1,4 @@
-class RentalsController < ApplicationController
+class Account::RentalsController < Account::AccountController
   def index
   end
 
