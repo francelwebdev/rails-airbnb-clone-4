@@ -1,2 +1,15 @@
-<h1>Equipment#index</h1>
-<p>Find me in app/views/equipment/index.html.erb</p>
+<h1>Your Profile</h1>
+
+<h3>Your listings:</h3>
+<div class="container">
+  <div class="row">
+    <% current_user.equipment.each do %>
+    <div class="col-xs-12 col-sm-4">
+      <%= current_user.first_name %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+

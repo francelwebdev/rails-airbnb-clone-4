@@ -1,6 +1,6 @@
 class Account::EquipmentController < Account::AccountController
 
-  before_action :find_equipment
+  before_action :find_equipment, only: [:show, :edit, :update, :destroy]
 
   def index
     @equipment = current_user.equipment.all
