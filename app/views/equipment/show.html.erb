@@ -1,3 +1,6 @@
+<% if @equipment.user == current_user %>
+  <%= link_to "Edit this listing", edit_account_equipment_path(@equipment), class: 'btn btn-warning'  %>
+<% end %>
 <div class="container padded">
   <div class="row">
     <div class="col-xs-12 col-sm-5">
@@ -34,8 +37,6 @@
 
 
 
-<% if @equipment.user == current_user %>
-  <%= link_to "Edit this listing", edit_account_equipment_path(@equipment), class: 'btn btn-warning'  %>
-<% end %>
+
 
 
