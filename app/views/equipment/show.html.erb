@@ -27,23 +27,14 @@
       <div class="card-header text-center", id="rent-header">
         <form>
           <div class="form-group">
-            <label for="start_date">Select date and time</label>
+            <label for="start_date">Like this equipment?</label>
           </div>
           <hr>
-        <div class="form-group">
-          <input type="date" class="form-control" id="start_date" placeholder="Start Date">
-        </div>
-        <div class="form-group">
-          <input type="time" class="form-control" id="start_time" placeholder="Start Date">
-        </div>
-        <div class="form-group">
-          <input type="time" class="form-control" id="end" placeholder="End Time">
-        </div>
         <% unless current_user %>
-        <%= link_to "Select", new_user_session_path, class: "btn btn-danger"  %>
+        <%= link_to "Rent now", new_user_session_path, class: "btn btn-danger"  %>
         <p>(login required)</p>
         <% else %>
-        <%= link_to "Select", new_equipment_rental_path(@equipment), class: "btn btn-danger"  %>
+        <%= link_to "Rent now", new_equipment_rental_path(@equipment), class: "btn btn-danger"  %>
           <% end %>
       </form>
     </div>
