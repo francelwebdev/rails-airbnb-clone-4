@@ -8,7 +8,4 @@ class EquipmentController < ApplicationController
     @equipment = Equipment.find(params[:id])
   end
 
-
-
-
 end

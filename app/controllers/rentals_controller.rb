@@ -2,18 +2,11 @@ class RentalsController < ApplicationController
 
 before_action :find_equipment
 
-  def index
-    @rentals = current_user.rentals.all
-  end
-
   def show
   end
 
   def new
     @rental = Rental.new
-    # @equipment = Equipment.find(params[:equipment_id])
-    # @rental.equipment = @equipment
-    # @rental.user = current_user
   end
 
   def create
@@ -21,10 +14,9 @@ before_action :find_equipment
     @rental.equipment = @equipment
     @rental.user = current_user
     # @rental = @equipment.rentals.new(rental_params)
-      if @rental.save
-        # flash[:success] = "Congratulations! The equipment has been rented!"
-        @equipment.available? == false
-        redirect_to  account_rental_path(@rental)
+    # @equipment.available == false
+    if @rental.save
+      redirect_to account_rentals_path, notice: 'Congratulations! Your rental was successful !'
     end
   end
 
@@ -44,7 +36,7 @@ before_action :find_equipment
   end
 
   def find_equipment
-    @equipment = Equipment.find(params[:eqipment_id])
+    @equipment = Equipment.find(params[:equipment_id])
   end
 
 end

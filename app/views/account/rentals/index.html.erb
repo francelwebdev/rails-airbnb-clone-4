@@ -1,0 +1,20 @@
+<div class="wrapper-grey2 padded">
+  <h3>Your rentals:</h3>
+  <div class="container">
+    <div class="row">
+    <ol>
+      <% current_user.rentals.each do |r| %>
+      <li>
+      <p><%= r.equipment.title %></p>
+      <p><%= r.equipment.description %></p>
+      </li>
+      Rent from: <%= r.start_date %> |
+      Rent to: <%= r.end_date %>
+
+      <% end %>
+      </ol>
+    </div>
+  </div>
+</div>
+
+

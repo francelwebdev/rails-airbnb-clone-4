@@ -3,11 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :equipment do
-    resources :rentals
+    resources :rentals, only: [ :new, :create ]
   end
 
   namespace :account do
     resources :equipment
+    resources :rentals, only: [ :index ]
   end
 
   mount Attachinary::Engine => "/attachinary"
