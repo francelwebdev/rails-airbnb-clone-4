@@ -36,6 +36,8 @@ class Account::EquipmentController < Account::AccountController
   end
 
   def destroy
+    @equipment.destroy
+    redirect_to account_equipment_index_path
   end
 
   private
