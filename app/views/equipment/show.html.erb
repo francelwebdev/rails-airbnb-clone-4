@@ -1,9 +1,4 @@
-<% if @equipment.user == current_user %>
-<%= link_to "Edit this listing", edit_account_equipment_path(@equipment), class: 'btn btn-warning'  %>
-<% end %>
-<% if @equipment.user == current_user %>
-<%= link_to "Remove this listing", account_equipment_path(@equipment), method: 'delete', class: 'btn btn-danger'  %>
-<% end %>
+
 
 <div class="container padded">
   <div class="row">
@@ -23,6 +18,15 @@
       </div>
     </div>
 
+    <% if @equipment.user == current_user %>
+    <div class="col-xs-12 col-sm-3">
+      <div class="text-center">
+        <p><%= link_to "Edit this listing", edit_account_equipment_path(@equipment), class: 'btn btn-warning'  %></p>
+        <p><%= link_to "Remove this listing", account_equipment_path(@equipment), method: 'delete', class: 'btn btn-danger'  %></p>
+      </div>
+    </div>
+    <% end %>
+
     <% unless @equipment.user == current_user %>
     <div class="col-xs-12 col-sm-3">
       <div class="card-header text-center", id="rent-header">
@@ -40,7 +44,7 @@
           <% end %>
         </form>
       </div>
-       <% end %>
+      <% end %>
     </div>
   </div>
 </div>
