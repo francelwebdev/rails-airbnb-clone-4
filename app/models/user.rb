@@ -26,6 +26,8 @@ class User < ApplicationRecord
   has_many :equipment
   has_many :rentals
 
+  has_attachment :avatar
+
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
