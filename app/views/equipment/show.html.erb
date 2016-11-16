@@ -16,7 +16,8 @@
           <h4 class="card-title">Equipment info:</h4>
         </div>
         <ul id="description">
-          <li>Title: <%= @equipment.title %></li>
+          <h3><%= @equipment.title %></h3>
+          <hr>
           <li>Description: <%= @equipment.description %></li>
           <li>Owner: <%= @equipment.user.first_name.capitalize + " " + @equipment.user.last_name.capitalize %></li>
         </ul>
