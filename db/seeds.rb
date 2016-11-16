@@ -2,10 +2,13 @@ Rental.destroy_all
 Equipment.destroy_all
 User.destroy_all
 
-url = "http://i.forbesimg.com/media/lists/people/brad-pitt_416x416.jpg"
+alexurl = "http://i.forbesimg.com/media/lists/people/brad-pitt_416x416.jpg"
+boburl = "http://kingofwallpapers.com/chris-hemsworth/chris-hemsworth-007.jpg"
+joshurl = "http://images.amcnetworks.com/ifc.com/wp-content/uploads/2011/11/CBB440-JoshGroban-900x600.jpg"
+
 
 alex = User.create(first_name:"alex", last_name:"spencer", email:"alex@me.com", password:"blabla")
-alex.avatar_url = url
+alex.avatar_url = alexurl
 drumurl = "http://www.ruppsdrums.com/shop/images/Yamaha-Live-Custom-LC2F57-Drum-Set-wHardware--NEW38608-48338.jpg"
 drum = Equipment.create(title: 'Drum Kit', description: 'Yahama Drum Kit', user: alex)
 drum.photo_url = drumurl
@@ -19,7 +22,7 @@ keyboard = Equipment.create(title: 'Snazzy Keyboard', description: 'Sweet soundi
 keyboard.photo_url = keyboardurl
 
 bob = User.create(first_name:"bob", last_name:"fox", email:"bob@me.com", password:"blabla")
-bob.avatar_url = url
+bob.avatar_url = boburl
 guitarurl = "https://www.guitarburn.com/blog/wp-content/uploads/2016/08/gibson_acoustic_graphic1.jpg"
 guitar = Equipment.create(title: 'Guitar', description: 'Gibson electronic guitar', user: bob)
 guitar.photo_url = guitarurl
@@ -34,7 +37,7 @@ guitar3.photo_url = guitar3url
 
 
 josh = User.create(first_name:"josh", last_name:"wilson", email:"josh@me.com", password:"blabla")
-josh.avatar_url = url
+josh.avatar_url = joshurl
 bassurl = "http://sherman.ninja/resonance/wp-content/uploads/2014/10/bassguitar2.jpg"
 bass = Equipment.create(title: 'Bass guitar', description: 'Some description', user: josh)
 bass.photo_url = bassurl
@@ -43,7 +46,7 @@ violinurl = "https://static1.squarespace.com/static/550ba261e4b0215d222516fe/t/5
 violin = Equipment.create(title: 'Unique Electric violin', description: 'So Cool, right?', user: josh)
 violin.photo_url = violinurl
 
-djurl = "https://static1.squarespace.com/static/550ba261e4b0215d222516fe/t/551ecffbe4b0ab1453852e8b/1428082690712/Electric+Violin.jpg?format=1500w"
+djurl = "http://www.jimlaabsmusic.com/images/uploads/karaoke/numark/Numark-NS7-DJ-Turntable-Controller-with-Serato-ITCH-Software6.jpg"
 dj = Equipment.create(title: 'Turntable', description: 'Smooth sounding beats', user: josh)
 dj.photo_url = djurl
 
