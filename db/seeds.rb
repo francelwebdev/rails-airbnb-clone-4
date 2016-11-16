@@ -1,3 +1,4 @@
+Rental.destroy_all
 Equipment.destroy_all
 User.destroy_all
 alex = User.create(first_name:"alex", last_name:"spencer", email:"alex@me.com", password:"alfsnjfsdfndsfex")
