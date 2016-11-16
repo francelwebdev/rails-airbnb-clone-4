@@ -17,10 +17,10 @@ before_action :find_equipment
     @rental.equipment = @equipment
     @rental.user = current_user
     # @rental = @equipment.rentals.new(rental_params)
+    # @equipment.available == false
     if @rental.save
-      @equipment.available? == false
-      flash[:success] = "Congratulations! The equipment has been rented!"
-      redirect_to account_rentals_path
+      # flash[:success] = "Congratulations! The equipment has been rented!"
+      redirect_to account_rentals_path, notice: 'Congratulations! Your rental was successful !'
     end
 
   end
