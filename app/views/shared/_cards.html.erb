@@ -4,14 +4,14 @@
     <div class="row">
       <% @equipment.each do |equipment| %>
       <div class="col-xs-12 col-sm-4", id="popular-card">
-        <!-- insert <div class="card"> -->
         <%= link_to (equipment_path(equipment)) do %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path equipment.photo.path %>);">
           <div class="card-description">
             <h2><%= equipment.title %></h2>
             <p><%= equipment.description %></p>
           </div>
-          <img class="card-user avatar" src="user.jpg">
+          <%= cl_image_tag equipment.user.avatar.path, class: "card-user avatar" %>
+           <%= link_to "", equipment_path(equipment), class: 'card-link'  %>
         </div>
         <% end %>
       </div>
