@@ -5,16 +5,18 @@
 <h3>Your listings:</h3>
 <div class="container">
   <div class="row">
-    <% current_user.equipment.each do |e| %>
+    <% current_user.equipment.each do |equipment| %>
     <div class="col-xs-12 col-sm-4">
 
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path e.photo.path %>);">
-        <div class="card-category"><%= e.title %></div>
+      <% if equipment.photo? %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path equipment.photo.path %>);">
+      <% end %>
+        <div class="card-category"><%= equipment.title %></div>
         <div class="card-description">
-          <p><%= e.description %></p>
+          <p><%= equipment.description %></p>
         </div>
-         <%= cl_image_tag e.user.avatar.path, class: "card-user avatar" %>
-        <%= link_to "", equipment_path(e), class: 'card-link'  %>
+         <%= cl_image_tag equipment.user.avatar.path, class: "card-user avatar" %>
+        <%= link_to "", equipment_path(equipment), class: 'card-link'  %>
       </div>
     </div>
     <% end %>
