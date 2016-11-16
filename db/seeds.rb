@@ -3,8 +3,8 @@ Equipment.destroy_all
 User.destroy_all
 
 alexurl = "http://i.forbesimg.com/media/lists/people/brad-pitt_416x416.jpg"
-boburl = "http://kingofwallpapers.com/chris-hemsworth/chris-hemsworth-007.jpg"
-joshurl = "http://images.amcnetworks.com/ifc.com/wp-content/uploads/2011/11/CBB440-JoshGroban-900x600.jpg"
+boburl = "https://s-media-cache-ak0.pinimg.com/564x/ef/f2/31/eff23152f2e64d0cfa7b29c837edbc49.jpg"
+joshurl = "http://orig08.deviantart.net/94ef/f/2014/259/8/4/josh_hutcherson___liam_hemsworth_by_thatnordicguy-d7zexcs.jpg"
 
 
 alex = User.create(first_name:"alex", last_name:"spencer", email:"alex@me.com", password:"blabla")
