@@ -1,9 +1,18 @@
-<h2>Available Equipment:</h2>
-<ol>
-  <% @equipment.each do |equipment| %>
-  <p>Title: <%= equipment.title %></p>
-  <p>Description: <%= equipment.description %></p>
-
+<div class="container">
+  <h2>Available Equipment:</h2>
+  <div class="row">
+    <% @equipment.each do |e| %>
+    <div class="col-xs-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'banner.jpg' %>);">
+        <div class="card-category"><%= e.title %></div>
+        <div class="card-description">
+          <p><%= e.description %></p>
+        </div>
+        <img class="card-user avatar" src="#">
+        <%= link_to "", equipment_path(e), class: 'card-link'  %>
+      </div>
+    </div>
   <% end %>
-</ol>
+  </div>
+</div>
 
