@@ -25,32 +25,34 @@
     <% if @equipment.user == current_user %>
     <div class="col-xs-12 col-sm-3">
       <div class="text-center">
+        <div class="card-header text-center"
         <p><%= link_to "Edit this listing", edit_account_equipment_path(@equipment), class: 'btn btn-warning'  %></p>
         <p><%= link_to "Remove this listing", account_equipment_path(@equipment), method: 'delete', class: 'btn btn-danger'  %></p>
       </div>
     </div>
-    <% end %>
-
-    <% unless @equipment.user == current_user %>
-    <div class="col-xs-12 col-sm-3">
-      <div class="card-header text-center", id="rent-header">
-        <form>
-          <div class="form-group">
-            <label for="start_date">Like this equipment?</label>
-          </div>
-          <hr>
-          <% unless current_user %>
-          <%= link_to "Rent now", new_user_session_path, class: "btn btn-danger"  %>
-          <p></p>
-          <p>(Login required)</p>
-          <% else %>
-          <%= link_to "Rent now", new_equipment_rental_path(@equipment), class: "btn btn-danger"  %>
-          <% end %>
-        </form>
-      </div>
-      <% end %>
-    </div>
   </div>
+  <% end %>
+
+  <% unless @equipment.user == current_user %>
+  <div class="col-xs-12 col-sm-3">
+    <div class="card-header text-center", id="rent-header">
+      <form>
+        <div class="form-group">
+          <label for="start_date">Like this equipment?</label>
+        </div>
+        <hr>
+        <% unless current_user %>
+        <%= link_to "Rent now", new_user_session_path, class: "btn btn-danger"  %>
+        <p></p>
+        <p>(Login required)</p>
+        <% else %>
+        <%= link_to "Rent now", new_equipment_rental_path(@equipment), class: "btn btn-danger"  %>
+        <% end %>
+      </form>
+    </div>
+    <% end %>
+  </div>
+</div>
 </div>
 
 
