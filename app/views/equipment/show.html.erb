@@ -23,6 +23,7 @@
       </div>
     </div>
 
+    <% unless @equipment.user == current_user %>
     <div class="col-xs-12 col-sm-3">
       <div class="card-header text-center", id="rent-header">
         <form>
@@ -39,6 +40,7 @@
           <% end %>
         </form>
       </div>
+       <% end %>
     </div>
   </div>
 </div>
