@@ -1,10 +1,11 @@
-
-
 <div class="container padded">
   <div class="row">
     <div class="col-xs-12 col-sm-5">
-      <%= cl_image_tag @equipment.photo.path, width: 400, height: 400, crop: :fill %>
+      <div id="equipment-image">
+        <%= cl_image_tag @equipment.photo.path, width: 400, height: 400, crop: :fill  %>
+      </div>
     </div>
+
     <div class="col-xs-12 col-sm-4">
       <div class="card-info text-xs-center", id="eq-info">
         <div class="card-header">
@@ -13,8 +14,13 @@
         <ul id="description">
           <h3><%= @equipment.title %></h3>
           <hr>
-          <li>Description: <%= @equipment.description %></li>
-          <li>Owner: <%= @equipment.user.first_name.capitalize + " " + @equipment.user.last_name.capitalize %></li>
+          <li>Description: </li><%= @equipment.description %>
+          <p></p>
+          <li>Owner: </li><%= @equipment.user.first_name.capitalize + " " + @equipment.user.last_name.capitalize %>
+          <p></p>
+          <li>Category: </li><%= @equipment.category %>
+          <p></p>
+          <li>Price: </li> <%= @equipment.price %>
         </ul>
       </div>
     </div>
@@ -22,43 +28,35 @@
     <% if @equipment.user == current_user %>
     <div class="col-xs-12 col-sm-3">
       <div class="text-center">
+        <div class="card-header text-center", id="edit-info">
         <p><%= link_to "Edit this listing", edit_account_equipment_path(@equipment), class: 'btn btn-warning'  %></p>
         <p><%= link_to "Remove this listing", account_equipment_path(@equipment), method: 'delete', class: 'btn btn-danger'  %></p>
       </div>
     </div>
-    <% end %>
+  </div>
+  <% end %>
 
-    <% unless @equipment.user == current_user %>
-    <div class="col-xs-12 col-sm-3">
-      <div class="card-header text-center", id="rent-header">
-        <form>
-          <div class="form-group">
-            <label for="start_date">Like this equipment?</label>
-          </div>
-          <hr>
-          <% unless current_user %>
-          <%= link_to "Rent now", new_user_session_path, class: "btn btn-danger"  %>
-          <p></p>
-          <p>(Login required)</p>
-          <% else %>
-          <%= link_to "Rent now", new_equipment_rental_path(@equipment), class: "btn btn-danger"  %>
-          <% end %>
-        </form>
-      </div>
-      <% end %>
+  <% unless @equipment.user == current_user %>
+  <div class="col-xs-12 col-sm-3">
+    <div class="card-header text-center", id="rent-header">
+      <form>
+        <div class="form-group">
+          <label for="start_date">Like this equipment?</label>
+        </div>
+        <hr>
+        <% unless current_user %>
+        <%= link_to "Rent now", new_user_session_path, class: "btn btn-danger"  %>
+        <p></p>
+        <p>(Login required)</p>
+        <% else %>
+        <%= link_to "Rent now", new_equipment_rental_path(@equipment), class: "btn btn-danger"  %>
+        <% end %>
+      </form>
     </div>
+    <% end %>
   </div>
 </div>
-
-
-<!--         <div class="card-header", id="rent-header">
- --><!--           <h4>Rent overview</h4>
-        </div
-        <div class="card-block">
-          <h4 class="card-title">Equipment:  </h4>
-          <h4 class="card-title">Rental period:  </h4>
-          <h4 class="card-title">Total price:  </h4> -->
-
+</div>
 
 
 
