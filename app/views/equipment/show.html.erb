@@ -1,5 +1,3 @@
-
-
 <div class="container padded">
   <div class="row">
     <div class="col-xs-12 col-sm-5">
@@ -13,8 +11,13 @@
         <ul id="description">
           <h3><%= @equipment.title %></h3>
           <hr>
-          <li>Description: <%= @equipment.description %></li>
-          <li>Owner: <%= @equipment.user.first_name.capitalize + " " + @equipment.user.last_name.capitalize %></li>
+          <li>Description: </li><%= @equipment.description %>
+          <p></p>
+          <li>Owner: </li><%= @equipment.user.first_name.capitalize + " " + @equipment.user.last_name.capitalize %>
+          <p></p>
+          <li>Category: </li><%= @equipment.category %>
+          <p></p>
+          <li>Price: </li> <%= @equipment.price %>
         </ul>
       </div>
     </div>
