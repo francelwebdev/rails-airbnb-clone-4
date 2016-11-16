@@ -2,11 +2,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :equipment
+  resources :equipment do
+    resources :rentals
+  end
 
   namespace :account do
     resources :equipment
-    resources :rentals
   end
 
   root to: 'pages#home'
