@@ -8,7 +8,7 @@
 <div class="container padded">
   <div class="row">
     <div class="col-xs-12 col-sm-5">
-      <img src="http://placehold.it/400x400" alt="", class="show-image">
+      <%= cl_image_tag @equipment.photo.path, width: 400, height: 400, crop: :fill %>
     </div>
     <div class="col-xs-12 col-sm-4">
       <div class="card-info text-xs-center", id="eq-info">
