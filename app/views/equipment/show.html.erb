@@ -1,8 +1,11 @@
 <div class="container padded">
   <div class="row">
     <div class="col-xs-12 col-sm-5">
-      <%= cl_image_tag @equipment.photo.path, width: 400, height: 400, crop: :fill %>
+      <div id="equipment-image">
+        <%= cl_image_tag @equipment.photo.path, width: 400, height: 400, crop: :fill  %>
+      </div>
     </div>
+
     <div class="col-xs-12 col-sm-4">
       <div class="card-info text-xs-center", id="eq-info">
         <div class="card-header">
@@ -25,7 +28,7 @@
     <% if @equipment.user == current_user %>
     <div class="col-xs-12 col-sm-3">
       <div class="text-center">
-        <div class="card-header text-center"
+        <div class="card-header text-center", id="edit-info">
         <p><%= link_to "Edit this listing", edit_account_equipment_path(@equipment), class: 'btn btn-warning'  %></p>
         <p><%= link_to "Remove this listing", account_equipment_path(@equipment), method: 'delete', class: 'btn btn-danger'  %></p>
       </div>
@@ -54,16 +57,6 @@
   </div>
 </div>
 </div>
-
-
-<!--         <div class="card-header", id="rent-header">
- --><!--           <h4>Rent overview</h4>
-        </div
-        <div class="card-block">
-          <h4 class="card-title">Equipment:  </h4>
-          <h4 class="card-title">Rental period:  </h4>
-          <h4 class="card-title">Total price:  </h4> -->
-
 
 
 
