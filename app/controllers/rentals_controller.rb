@@ -7,9 +7,6 @@ before_action :find_equipment
 
   def new
     @rental = Rental.new
-    # @equipment = Equipment.find(params[:equipment_id])
-    # @rental.equipment = @equipment
-    # @rental.user = current_user
   end
 
   def create
@@ -19,10 +16,8 @@ before_action :find_equipment
     # @rental = @equipment.rentals.new(rental_params)
     # @equipment.available == false
     if @rental.save
-      # flash[:success] = "Congratulations! The equipment has been rented!"
       redirect_to account_rentals_path, notice: 'Congratulations! Your rental was successful !'
     end
-
   end
 
   def edit
