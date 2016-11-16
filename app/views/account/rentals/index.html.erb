@@ -1,20 +1,23 @@
-<div class="wrapper-grey2 padded">
-  <h3>Your rentals:</h3>
+<div class="wrapper-grey padded">
+  <div class="heading text-center">
+  <h2>Your rentals:</h2>
+  </div>
   <div class="container">
     <div class="row">
-    <ol>
       <% current_user.rentals.each do |r| %>
-      <li>
-      <p><%= r.equipment.title %></p>
-      <p><%= r.equipment.description %></p>
-      </li>
-      Rent from: <%= r.start_date %> |
-      Rent to: <%= r.end_date %>
-
+      <div class="col-xs-6 col-xs-offset-3">
+        <div class="devise">
+          <li><%= r.equipment.title %></li>
+          <li><%= r.equipment.description %></li>
+          <li>Rent from: <%= r.start_date %></li>
+          <li>Rent to: <%= r.end_date %></li>
+        </div>
+      </div>
       <% end %>
-      </ol>
     </div>
   </div>
 </div>
+
+
 
 

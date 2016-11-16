@@ -1,9 +1,23 @@
-<h2>New Rental</h2>
+<div class="wrapper-grey padded">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <div class="devise">
+          <div class="header text-center">
+            <h2>New Rental</h2>
+            <hr>
+          </div>
+          <%= simple_form_for [@equipment, @rental] do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.submit "Rent", class: "btn btn-danger" %>
 
-<%= simple_form_for [@equipment, @rental] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit "Rent", class: "btn btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<% end %>
+
 
