@@ -43,7 +43,7 @@ class Account::EquipmentController < Account::AccountController
   private
 
   def equipment_params
-    params.require(:equipment).permit(:title, :description, :category, :price)
+    params.require(:equipment).permit(:title, :description, :category, :price, :photo)
   end
 
   def find_equipment
