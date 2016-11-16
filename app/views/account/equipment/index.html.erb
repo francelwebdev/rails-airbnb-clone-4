@@ -8,12 +8,12 @@
     <% current_user.equipment.each do |e| %>
     <div class="col-xs-12 col-sm-4">
 
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path e.photo.path %>);'>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path e.photo.path %>);">
         <div class="card-category"><%= e.title %></div>
         <div class="card-description">
           <p><%= e.description %></p>
         </div>
-        <img class="card-user avatar" src="#">
+         <%= cl_image_tag e.user.avatar.path, class: "card-user avatar" %>
         <%= link_to "", equipment_path(e), class: 'card-link'  %>
       </div>
     </div>
