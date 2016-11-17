@@ -3,7 +3,9 @@
 <div class="container padded">
   <div class="row">
     <div class="col-xs-12 col-sm-5">
-      <%= cl_image_tag @equipment.photo.path, width: 400, height: 400, crop: :fill %>
+      <% if @equipment.photo? %>
+        <%= cl_image_tag @equipment.photo.path, width: 400, height: 400, crop: :fill %>
+      <% end %>
     </div>
     <div class="col-xs-12 col-sm-4">
       <div class="card-info text-xs-center", id="eq-info">
