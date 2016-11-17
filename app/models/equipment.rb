@@ -15,6 +15,12 @@
 
 class Equipment < ApplicationRecord
 
+
+  scope :title, -> (title) { where title: title }
+  scope :address, -> (address) { where address: address }
+  # scope :starts_with, -> (name) { where("name like ?", "#{name}%")}
+
+
   belongs_to :user
   has_many :users, through: :rentals
 
