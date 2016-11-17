@@ -15,7 +15,7 @@ before_action :find_equipment
     @rental.user = current_user
     @equipment.available == false
     if @rental.save
-      redirect_to account_rentals_path, notice: 'Congratulations! Your rental was successful !'
+      redirect_to account_rentals_path, notice: 'Congratulations! Your rental was successful!'
     else
       render :new
     end
