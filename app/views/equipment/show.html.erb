@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-xs-12 col-sm-5">
       <% if @equipment.photo? %>
-        <div id="equipment-image">
-          <%= cl_image_tag @equipment.photo.path, width: 400, height: 400, crop: :fill %>
-        </div>
+      <div id="equipment-image">
+        <%= cl_image_tag @equipment.photo.path, width: 400, height: 400, crop: :fill %>
+      </div>
       <% end %>
     </div>
 
@@ -22,7 +22,9 @@
           <p></p>
           <li>Category: </li><%= @equipment.category %>
           <p></p>
-          <li>Price: </li> <%= @equipment.price %>
+          <li>Price:</li> £<%= @equipment.price %>
+          <p></p>
+          <li>Address: </li> <%= @equipment.address %>
         </ul>
       </div>
     </div>
@@ -31,34 +33,63 @@
     <div class="col-xs-12 col-sm-3">
       <div class="text-center">
         <div class="card-header text-center", id="edit-info">
-        <p><%= link_to "Edit this listing", edit_account_equipment_path(@equipment), class: 'btn btn-warning'  %></p>
-        <p><%= link_to "Remove this listing", account_equipment_path(@equipment), method: 'delete', class: 'btn btn-danger'  %></p>
+          <p><%= link_to "Edit this listing", edit_account_equipment_path(@equipment), class: 'btn btn-warning'  %></p>
+          <p><%= link_to "Remove this listing", account_equipment_path(@equipment), method: 'delete', class: 'btn btn-danger'  %></p>
+        </div>
       </div>
     </div>
-  </div>
-  <% end %>
-
-  <% unless @equipment.user == current_user %>
-  <div class="col-xs-12 col-sm-3">
-    <div class="card-header text-center", id="rent-header">
-      <form>
-        <div class="form-group">
-          <label for="start_date">Like this equipment?</label>
-        </div>
-        <hr>
-        <% unless current_user %>
-        <%= link_to "Rent now", new_user_session_path, class: "btn btn-danger"  %>
-        <p></p>
-        <p>(Login required)</p>
-        <% else %>
-        <%= link_to "Rent now", new_equipment_rental_path(@equipment), class: "btn btn-danger"  %>
-        <% end %>
-      </form>
-    </div>
     <% end %>
+
+    <% unless @equipment.user == current_user %>
+    <div class="col-xs-12 col-sm-3">
+      <div class="card-header text-center", id="rent-header">
+        <form>
+          <div class="form-group">
+            <label for="start_date">Like this equipment?</label>
+          </div>
+          <hr>
+          <% unless current_user %>
+          <%= link_to "Rent now", new_user_session_path, class: "btn btn-danger"  %>
+          <p></p>
+          <% else %>
+          <%= link_to "Rent now", new_equipment_rental_path(@equipment), class: "btn btn-danger"  %>
+          <% end %>
+        </form>
+      </div>
+      <% end %>
+    </div>
   </div>
+
+
+  <div id="map" style="width: 100%; height: 400px;"></div>
 </div>
-</div>
+
+
+<% content_for(:after_js) do %>
+
+<%= javascript_tag do %>
+$(document).ready(function() {
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: { id: 'map' } }, function() {
+markers = handler.addMarkers(<%= raw @hash.to_json %>);
+handler.bounds.extendWith(markers);
+handler.fitMapToBounds();
+if (markers.length == 0) {
+handler.getMap().setZoom(2);
+} else if (markers.length == 1) {
+handler.getMap().setZoom(14);
+}
+});
+});
+
+<% end %>
+
+<% end %>
+
+
+
+
+
 
 
 

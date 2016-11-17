@@ -21,12 +21,12 @@ bob.avatar_url = boburl
 # EQUIPMENT
 
 ampurl = "http://c1.zzounds.com/media/quality,85/AS100D_angle-c272c7a69dfddd3c67fe1497c181fdbd.jpg"
-amp = Equipment.create(title: 'Sweet Amp', description: 'Marshall Amp', user: alex)
+amp = Equipment.create(title: 'Sweet Amp', description: 'Marshall Amp', user: alex, address: "25 Cuff Point Columbia Road, E2 7PP, London", category: "Guitars", price: 50)
 amp.photo_url = ampurl
 
 
 guitarurl = "https://www.guitarburn.com/blog/wp-content/uploads/2016/08/gibson_acoustic_graphic1.jpg"
-guitar = Equipment.create(title: 'Guitar', description: 'Gibson electronic guitar', user: bob)
+guitar = Equipment.create(title: 'Guitar', description: 'Gibson electronic guitar', user: bob, address: "19190 West Orchard Drive, Elmore, Ohio")
 guitar.photo_url = guitarurl
 
 guitar3url = "http://musicfutures.com/wp-content/uploads/2015/03/Fender-CD-60-Dreadnought-Acoustic-Guitar-with-Hard-Case-MusicFutures.jpg"
