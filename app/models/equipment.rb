@@ -23,6 +23,7 @@ class Equipment < ApplicationRecord
 
   belongs_to :user
   has_many :users, through: :rentals
+  has_many :reviews
 
   has_attachment :photo
 
