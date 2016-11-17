@@ -4,9 +4,17 @@ class Account::EquipmentController < Account::AccountController
 
   def index
     @equipment = current_user.equipment.all
+
+    @equipment = Equipment.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@equipment) do |equipment, marker|
+      marker.lat flat.latitude
+      marker.lng flat.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
   end
 
   def show
+    @equipment_coordinates = { lat: @equipment.latitude, lng: @equipment.longitude }
   end
 
   def new
@@ -17,7 +25,7 @@ class Account::EquipmentController < Account::AccountController
     @equipment = Equipment.new(equipment_params)
     @equipment.user = current_user
     if @equipment.save
-      redirect_to equipment_path(@equipment)
+      redirect_to equipment_path(@equipment), notice: 'Eqiupment was successfully created.'
     else
       render :new
     end

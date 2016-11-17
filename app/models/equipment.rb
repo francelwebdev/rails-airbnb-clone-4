@@ -14,10 +14,14 @@
 #
 
 class Equipment < ApplicationRecord
+
   belongs_to :user
   has_many :users, through: :rentals
 
   has_attachment :photo
+
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 
   validates :title, presence: true
   validates :description, presence: true
