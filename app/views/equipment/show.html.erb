@@ -1,9 +1,11 @@
 <div class="container padded">
   <div class="row">
     <div class="col-xs-12 col-sm-5">
-      <div id="equipment-image">
-        <%= cl_image_tag @equipment.photo.path, width: 400, height: 400, crop: :fill  %>
-      </div>
+      <% if @equipment.photo? %>
+        <div id="equipment-image">
+          <%= cl_image_tag @equipment.photo.path, width: 400, height: 400, crop: :fill %>
+        </div>
+      <% end %>
     </div>
 
     <div class="col-xs-12 col-sm-4">
