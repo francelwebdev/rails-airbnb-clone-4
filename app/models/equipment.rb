@@ -21,6 +21,7 @@ class Equipment < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
+  validates :address, presence: true
   # validates :category, presence: true
   # validates :available, presence: true
   # validates :price, presence: true
