@@ -6,6 +6,7 @@
         <%= simple_form_for(@equipment, url: account_equipment_index_path) do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
+        <%= f.input :address %>
         <%= f.input :photo, as: :attachinary %>
         <%= f.submit class:"btn btn-primary" %>
         <% end %>
