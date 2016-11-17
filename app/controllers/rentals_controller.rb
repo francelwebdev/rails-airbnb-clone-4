@@ -13,7 +13,9 @@ before_action :find_equipment
     @rental = Rental.new(rental_params)
     @rental.equipment = @equipment
     @rental.user = current_user
-    @equipment.available = false
+
+    @equipment.update(available: false)
+
     if @rental.save
       redirect_to account_rentals_path, notice: 'Congratulations! Your rental was successful !'
     else
