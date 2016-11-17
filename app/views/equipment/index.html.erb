@@ -1,42 +1,58 @@
 <div class="wrapper-grey">
   <div class="container">
 
-    <h2>Available Equipment:</h2>
+
+    <% if @equipment.present? %>
+    <div class="title text-center">
+      <h2>Available Equipment:</h2>
+    </div>
     <div class="row">
       <div class="col-xs-12 col-md-8">
         <% @equipment.each do |e| %>
-          <div class="col-xs-12 col-sm-6">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path e.photo.path %>);">
-              <div class="card-category"><%= e.title %></div>
-              <div class="card-description">
-                <p><%= e.description %></p>
-              </div>
-              <%= cl_image_tag e.user.avatar.path, class: "card-user avatar" %>
-              <%= link_to "", equipment_path(e), class: 'card-link'  %>
+        <div class="col-xs-12 col-sm-6">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path e.photo.path %>);">
+            <div class="card-category"><%= e.title %></div>
+            <div class="card-description">
+              <p><%= e.description %></p>
             </div>
+            <%= cl_image_tag e.user.avatar.path, class: "card-user avatar" %>
+            <%= link_to "", equipment_path(e), class: 'card-link'  %>
           </div>
-        <% end %>
+        </div>
       </div>
+      <% end %>
       <div class="col-xs-12 col-md-4">
         <div id="map-small" style="width: 100%; height: 400px;"></div>
       </div>
+
+      <% else %>
+      <div class="sorry-note text-center">
+        <h3>Sorry, there is no equipment matching your criteria.</h3>
+        <p></p>
+        <hr>
+        <%= image_tag 'butters.png', width: 100 %>
+        <p></p>
+        <hr>
+        <p><%= link_to "Search again", root_path, class: 'btn btn-primary' %></p>
+      </div>
+      <% end %>
     </div>
   </div>
-</div>
 
 
 
-<% content_for(:after_js) do %>
 
-<%= javascript_tag do %>
-$(document).ready(function() {
-var handler = Gmaps.build('Google');
-handler.buildMap({ internal: { id: 'map-small' } }, function() {
-markers = handler.addMarkers(<%= raw @hash.to_json %>);
-handler.bounds.extendWith(markers);
-handler.fitMapToBounds();
-if (markers.length == 0) {
-handler.getMap().setZoom(2);
+  <% content_for(:after_js) do %>
+
+  <%= javascript_tag do %>
+  $(document).ready(function() {
+  var handler = Gmaps.build('Google');
+  handler.buildMap({ internal: { id: 'map-small' } }, function() {
+  markers = handler.addMarkers(<%= raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  if (markers.length == 0) {
+  handler.getMap().setZoom(2);
 } else if (markers.length == 1) {
 handler.getMap().setZoom(14);
 }
