@@ -30,31 +30,31 @@ guitar = Equipment.create(title: 'Guitar', description: 'Gibson electronic guita
 guitar.photo_url = guitarurl
 
 guitar3url = "http://musicfutures.com/wp-content/uploads/2015/03/Fender-CD-60-Dreadnought-Acoustic-Guitar-with-Hard-Case-MusicFutures.jpg"
-guitar3 = Equipment.create(title: 'Fender Guitar', description: 'Great sounding Fender acoustic guitar', user: bob)
+guitar3 = Equipment.create(title: 'Fender Guitar', description: 'Great sounding Fender acoustic guitar', user: bob, address: "Aviva stadium, Dublin")
 guitar3.photo_url = guitar3url
 
 bassurl = "http://sherman.ninja/resonance/wp-content/uploads/2014/10/bassguitar2.jpg"
-bass = Equipment.create(title: 'Bass guitar', description: 'Some description', user: josh)
+bass = Equipment.create(title: 'Bass guitar', description: 'Some description', user: josh, address: "Housham hall, matching tye, cm17 0pb")
 bass.photo_url = bassurl
 
 drumurl = "http://www.ruppsdrums.com/shop/images/Yamaha-Live-Custom-LC2F57-Drum-Set-wHardware--NEW38608-48338.jpg"
-drum = Equipment.create(title: 'Drum Kit', description: 'Yahama Drum Kit', user: alex)
+drum = Equipment.create(title: 'Drum Kit', description: 'Yahama Drum Kit', user: alex, address: "Old Trafford, Manchester")
 drum.photo_url = drumurl
 
 violinurl = "https://static1.squarespace.com/static/550ba261e4b0215d222516fe/t/551ecffbe4b0ab1453852e8b/1428082690712/Electric+Violin.jpg?format=1500w"
-violin = Equipment.create(title: 'Unique Electric violin', description: 'So Cool, right?', user: josh)
+violin = Equipment.create(title: 'Unique Electric violin', description: 'So Cool, right?', user: josh, address: "Holywood, Belfast")
 violin.photo_url = violinurl
 
 guitar2url = "http://i.dailymail.co.uk/i/pix/2016/06/11/00/15803B9E000005DC-3636155-image-m-62_1465600595045.jpg"
-guitar2 = Equipment.create(title: "Eric Clapton's Guitar!", description: 'I swear it is his!', user: bob)
+guitar2 = Equipment.create(title: "Eric Clapton's Guitar!", description: 'I swear it is his!', user: bob, address: "Westminister, London")
 guitar2.photo_url = guitar2url
 
 djurl = "http://www.jimlaabsmusic.com/images/uploads/karaoke/numark/Numark-NS7-DJ-Turntable-Controller-with-Serato-ITCH-Software6.jpg"
-dj = Equipment.create(title: 'Turntable', description: 'Smooth sounding beats', user: josh)
+dj = Equipment.create(title: 'Turntable', description: 'Smooth sounding beats', user: josh, address: "White Hart Lane, London")
 dj.photo_url = djurl
 
 keyboardurl = "https://static.roland.com/assets/images/products/gallery/fp-80-bk_angle_ks-18z_gal.jpg"
-keyboard = Equipment.create(title: 'Snazzy Keyboard', description: 'Sweet sounding keyboard', user: alex)
+keyboard = Equipment.create(title: 'Snazzy Keyboard', description: 'Sweet sounding keyboard', user: alex, address: "280 Upper Richmond Road, sw15 6tq")
 keyboard.photo_url = keyboardurl
 
 
