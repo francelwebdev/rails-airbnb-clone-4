@@ -3,8 +3,8 @@
   <h1>Rent music equipment</h1>
     <div class="search-form">
       <%= form_tag(equipment_index_path, method: "get") do %>
-        <%= text_field_tag :title, nil, placeholder: "Drum Kit" %>
-        <%= text_field_tag :address, nil, placeholder: "London"  %>
+        <%= text_field_tag :title, nil, placeholder: "Drum Kit", class: "input-field" %>
+        <%= text_field_tag :address, nil, placeholder: "London", class: "input-field"  %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
