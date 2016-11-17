@@ -28,6 +28,6 @@ class Equipment < ApplicationRecord
   validates :address, presence: true
   # validates :category, presence: true
   # validates :available, presence: true
-  # validates :price, presence: true
+  validates :price, presence: true
   # validates :user, presence: true
 end
