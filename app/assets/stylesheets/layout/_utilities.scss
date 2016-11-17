@@ -44,12 +44,15 @@
 
 .wrapper-grey {
   background: #F4F4F4;
-  padding: 14px 0 64px;
+
+  h3 {
+    margin-top: 0;
+    padding-top: 22px;
+  }
 }
 
 .wrapper-grey2 {
   background: #F4F4F4;
-  padding: 14px 27px 64px 27px;
 }
 
 .fa-star {
@@ -76,10 +79,11 @@
   margin-right: 6px;
 }
 
-.sorry-note {
-  margin-top: 72px;
-  margin-bottom: 72px;
+.wrapper-unavailable {
+  height: calc( 100vh - 173px );
+  margin: 0px auto;
 }
+
 
 // #equipment-image {
 //   box-shadow: 1px 2px 2px grey;
