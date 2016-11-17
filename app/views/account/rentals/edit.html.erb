@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <div class="devise">
+        <h2>Enter the new details of your rental below:</h2>
+        <%= simple_form_for(@rental, url: account_rental_path) do |f| %>
+        <%= f.input :start_date, label: 'New start date:' %>
+        <%= f.input :end_date, label: 'New end date:' %>
+        <%= f.submit class:"btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

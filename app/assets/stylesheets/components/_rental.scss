@@ -1,0 +1,95 @@
+.rental {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  background: white;
+  margin-top: 20px;
+}
+
+/* Body design */
+.rental-body {
+  flex: 1 1 auto;
+}
+.rental-body h3 {
+  font-weight: bold;
+  font-size: 23px;
+  margin-top: 0;
+}
+.rental-body p {
+  font-weight: lighter;
+  color: #999999;
+  margin-bottom: 0;
+}
+
+/* rental image */
+.rental-image {
+  border-radius: 10px;
+  margin-right: 20px;
+  width: 150px;
+  height: 150px;
+}
+
+/* Upvote design */
+.rental-upvote {
+  padding-right: 20px;
+  text-align: center;
+  transition: all 0.15s ease;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+}
+.rental-count {
+  margin: 2px 0 0;
+}
+.rental-arrow {
+  transition: all 0.15s ease;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid transparent;
+  border-bottom: 9px solid black;
+  border-radius: 2px;
+  margin: auto;
+}
+
+/* Controls design */
+.rental-controls {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0px;
+}
+.rental-controls a {
+  padding: 0 20px;
+  font-size: 17px;
+  color: #999999;
+}
+.rental-controls a:hover {
+  color: #D3473C !important;
+  text-decoration: none;
+}
+.rental-controls-hidden a {
+  color: transparent;
+  font-size: 15px;
+  transition: all 0.15s ease;
+  border-color: transparent;
+}
+
+/* Hover effects */
+.rental:hover {
+  /*background: rgba(58, 165, 250, 0.21);*/
+  cursor: pointer;
+}
+.rental-upvote:hover, .rental-upvote.rental-upvote-upvoted {
+  color: #5898f1;
+  cursor: pointer;
+}
+.rental-upvote-upvoted .rental-arrow {
+  border-bottom-color: #5898f1;
+}
+// .rental:hover .rental-upvote { transform: scale(1.2) }
+.rental:hover .rental-controls-hidden a { color: #E6E6E6 }
+.rental-upvote:hover .rental-arrow { border-bottom: 9px solid #5898f1 }

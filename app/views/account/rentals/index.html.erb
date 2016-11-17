@@ -1,23 +1,40 @@
 <div class="wrapper-grey padded">
   <div class="heading text-center">
-  <h2>Your rentals:</h2>
+    <h2>Your rentals:</h2>
   </div>
   <div class="container">
     <div class="row">
       <% current_user.rentals.each do |r| %>
-      <div class="col-xs-6 col-xs-offset-3">
-        <div class="devise">
-          <li><%= r.equipment.title %></li>
-          <li><%= r.equipment.description %></li>
-          <li>Rent from: <%= r.start_date %></li>
-          <li>Rent to: <%= r.end_date %></li>
+      <div class="col-xs-12">
+        <div class="rental">
+          <div class='rental-upvote'>
+            <div class="rental-arrow"></div>
+            <div class='rental-count'>95</div>
+          </div>
+          <%= cl_image_tag r.equipment.photo.path, class: 'rental-image hidden-xs' %>
+          <div class="rental-body">
+            <h3><%= r.equipment.title %></h3>
+            <h4><%= r.equipment.description %></h4>
+            <p>Starting: <%= r.start_date %></p>
+            <p>Ending: <%= r.end_date %></p>
+          </div>
+          <ul class="list-inline rental-controls hidden-sm hidden-xs">
+            <li>
+              <%= link_to edit_account_rental_path(r.id) do %>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+              <% end %>
+            </li>
+            <li>
+              <%= link_to account_rental_path(r.id), method: 'delete', data: {confirm: "Are you sure you want to cancel this rental?"} do %>
+              <i class="fa fa-ban" aria-hidden="true"></i> Cancel
+              <% end %>
+            </li>
+          </ul>
         </div>
       </div>
       <% end %>
     </div>
   </div>
 </div>
-
-
 
 
