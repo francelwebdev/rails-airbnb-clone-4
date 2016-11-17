@@ -1,7 +1,7 @@
 class EquipmentController < ApplicationController
 
   def index
-    @equipment = Equipment.all
+    @equipment = Equipment.where("title ILIKE ?", "%#{params[:title]}%").where(available: true)
     # @markers = Equipment.where.not(latitude: nil, longitude: nil)
 
     @hash = Gmaps4rails.build_markers(@equipment) do |equipment, marker|
