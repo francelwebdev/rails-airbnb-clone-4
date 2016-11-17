@@ -36,4 +36,23 @@ class Equipment < ApplicationRecord
   # validates :available, presence: true
   validates :price, presence: true
   # validates :user, presence: true
+
+  def self.search(params)
+    results = available.with_title(params[:title])
+    results = results.with_address(params[:address])
+
+    results
+  end
+
+  def self.available
+    where(available: true)
+  end
+
+  def self.with_title(title)
+    title.present? ? where("title ILIKE ?", "%#{title}%") : all
+  end
+
+  def self.with_address(address)
+    address.present? ? where("address ILIKE ?", "%#{address}%") : all
+  end
 end
