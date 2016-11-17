@@ -30,11 +30,12 @@
 #description {
   list-style: none;
   text-align: left;
-  margin: 35px 0 13px 0px;
+  margin: 35px 17px 13px -11px;
 }
 
 #description > li {
   text-align: left;
+  font-weight: bolder;
 }
 
 .info {
@@ -50,3 +51,18 @@
   background: #F4F4F4;
   padding: 14px 27px 64px 27px;
 }
+
+.fa-star {
+  font-size: 20px;
+  color: #EADF4D;
+}
+
+#edit-info {
+  padding: 36px;
+  box-shadow: 2px 2px 2px #CCCFCF;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+// #equipment-image {
+//   box-shadow: 1px 2px 2px grey;
+// }
