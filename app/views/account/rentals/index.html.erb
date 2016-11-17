@@ -11,6 +11,7 @@
           <li><%= r.equipment.description %></li>
           <li>Rent from: <%= r.start_date %></li>
           <li>Rent to: <%= r.end_date %></li>
+          <%= link_to "Change this rental", edit_account_rental_path(r.id) %>
           <%= link_to "Cancel this rental", account_rental_path(r.id), method: 'delete' %>
         </div>
       </div>

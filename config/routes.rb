@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :equipment
-    resources :rentals, only: [ :index, :destroy ]
+    resources :rentals, only: [ :index, :edit, :update, :destroy ]
   end
 
   mount Attachinary::Engine => "/attachinary"
