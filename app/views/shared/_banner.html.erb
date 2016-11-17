@@ -1,29 +1,11 @@
 <div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(49, 112, 143, 0.3) 50%), url(<%= image_path 'banner.jpg' %>);">
   <div class="banner-content">
-  <h2>Rent music equipment</h2>
+  <h1>Rent music equipment</h1>
     <div class="search-form">
-<!--       <form action="/equipment" class="form-inline">
-        <div class="form-group">
-          <input type="text" class="form-control" id="instrument" placeholder="Drum Kit">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="city" placeholder="London">
-        </div>
-        <div class="form-group">
-          <input type="date" class="form-control" id="start_date" placeholder="Start Date">
-        </div>
-        <div class="form-group">
-          <input type="time" class="form-control" id="end_date" placeholder="End Date">
-        </div>
-        <%#link_to "Search", equipment_index_path, class: "btn btn-primary" %>
-      </form> -->
-
       <%= form_tag(equipment_index_path, method: "get") do %>
-        <%= text_field_tag(:title) %>
-        <%= text_field_tag(:address) %>
-        <%= datetime_local_field(:rental, :start_date) %>
-        <%= datetime_local_field(:rental, :end_date) %>
-        <%= submit_tag("Search") %>
+        <%= text_field_tag :title, nil, placeholder: "Drum Kit", class: "input-field" %>
+        <%= text_field_tag :address, nil, placeholder: "London", class: "input-field"  %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>

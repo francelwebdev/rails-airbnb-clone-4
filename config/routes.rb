@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'reviews/new'
+
+  get 'reviews/index'
+
   devise_for :users
 
   resources :equipment do
     resources :rentals, only: [ :new, :create ]
+    resources :reviews, only [ :new, :create, :index ]
   end
 
   namespace :account do
