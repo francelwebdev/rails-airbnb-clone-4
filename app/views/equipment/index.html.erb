@@ -11,8 +11,8 @@
           <% @equipment.each do |e| %>
           <div class="col-xs-12 col-md-6">
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path e.photo.path %>);">
-              <div class="card-category"><%= e.title %></div>
-              <div class="card-description">
+              <div class="card-category", id="small-title"><%= e.title %></div>
+              <div class="card-description-small", id="fix">
                 <p><%= e.description %></p>
               </div>
               <%= cl_image_tag e.user.avatar.path, class: "card-user avatar" %>

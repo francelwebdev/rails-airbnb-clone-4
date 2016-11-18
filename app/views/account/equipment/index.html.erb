@@ -1,6 +1,5 @@
 <div class="wrapper-grey2 padded text-center">
-  <h1>Welcome, <%= @current_user.first_name.capitalize %>!</h1>
-  <h3>Your listings:</h3>
+  <h1>Your listings:</h1>
   <div class="container">
     <div class="row">
       <% current_user.equipment.each do |equipment| %>
@@ -10,8 +9,8 @@
         <% else %>
           <div class="card" style="background-color:#C0C3C5, linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
         <% end %>
-          <div class="card-category"><%= equipment.title %></div>
-          <div class="card-description">
+          <div class="card-category" id="equipment-title-small"><%= equipment.title %></div>
+          <div class="card-description-small">
             <p><%= equipment.description %></p>
           </div>
           <%= cl_image_tag equipment.user.avatar.path, class: "card-user avatar" %>

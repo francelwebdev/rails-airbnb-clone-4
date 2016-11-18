@@ -20,24 +20,24 @@ bob.avatar_url = boburl
 
 # EQUIPMENT
 
-ampurl = "http://c1.zzounds.com/media/quality,85/AS100D_angle-c272c7a69dfddd3c67fe1497c181fdbd.jpg"
+ampurl = "http://da1urhpfd469z.cloudfront.net/uploads/advertphotos/16/0405/25216669-433-640x491.jpg"
 amp = Equipment.create(title: 'Sweet Amp', description: 'Marshall Amp', user: alex, address: "25 Cuff Point Columbia Road, E2 7PP, London", category: "Guitars", price: 50)
 amp.photo_url = ampurl
 
 
-guitarurl = "https://www.guitarburn.com/blog/wp-content/uploads/2016/08/gibson_acoustic_graphic1.jpg"
+guitarurl = "http://whyguitar.com/images/electric-guitars-for-sale.jpg"
 guitar = Equipment.create(title: 'Guitar', description: 'Gibson electronic guitar', user: bob, address: "Eiffel Tower, Paris", price: 35)
 guitar.photo_url = guitarurl
 
-guitar3url = "http://musicfutures.com/wp-content/uploads/2015/03/Fender-CD-60-Dreadnought-Acoustic-Guitar-with-Hard-Case-MusicFutures.jpg"
+guitar3url = "https://i.ytimg.com/vi/mUimT5lSwfU/maxresdefault.jpg"
 guitar3 = Equipment.create(title: 'Fender Guitar', description: 'Great sounding Fender acoustic guitar', user: bob, address: "Aviva stadium, Dublin", price: 20)
 guitar3.photo_url = guitar3url
 
-bassurl = "http://sherman.ninja/resonance/wp-content/uploads/2014/10/bassguitar2.jpg"
-bass = Equipment.create(title: 'Bass guitar', description: 'Some description', user: josh, address: "Housham hall, matching tye, cm17 0pb", price: 45)
+bassurl = "http://guitarphotographer.com/More%20vintage%20guitar%20photos/horizontal/1969-mustang-bass.JPG"
+bass = Equipment.create(title: 'Bass guitar', description: 'Awesome Fender Bass', user: josh, address: "Housham hall, matching tye, cm17 0pb", price: 45)
 bass.photo_url = bassurl
 
-drumurl = "http://www.ruppsdrums.com/shop/images/Yamaha-Live-Custom-LC2F57-Drum-Set-wHardware--NEW38608-48338.jpg"
+drumurl = "http://beta-media.drumshop.co.uk/uploads/shop/inventory/images/QKUJR/QK_f.jpg"
 drum = Equipment.create(title: 'Drum Kit', description: 'Yahama Drum Kit', user: alex, address: "Old Trafford, Manchester", price: 27)
 drum.photo_url = drumurl
 
@@ -53,7 +53,7 @@ djurl = "http://www.jimlaabsmusic.com/images/uploads/karaoke/numark/Numark-NS7-D
 dj = Equipment.create(title: 'Turntable', description: 'Smooth sounding beats', user: josh, address: "White Hart Lane, London", price: 30)
 dj.photo_url = djurl
 
-keyboardurl = "https://static.roland.com/assets/images/products/gallery/fp-80-bk_angle_ks-18z_gal.jpg"
+keyboardurl = "https://digclassifieds.com/adpics/56fea18043ebf74c733d83924.jpg"
 keyboard = Equipment.create(title: 'Snazzy Keyboard', description: 'Sweet sounding keyboard', user: alex, address: "280 Upper Richmond Road, sw15 6tq", price: 70)
 keyboard.photo_url = keyboardurl
 
