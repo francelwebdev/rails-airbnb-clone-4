@@ -4,10 +4,10 @@
       <div class="devise">
         <h2>Enter the details of your new listing below:</h2>
         <%= simple_form_for(@equipment, url: account_equipment_index_path) do |f| %>
-        <%= f.input :title %>
-        <%= f.input :description %>
+        <%= f.input :title, placeholder: "Drum Kit" %>
+        <%= f.input :description, placeholder: "Electronic drum kit" %>
         <%= f.input :address %>
-        <%= f.input :price %>
+        <%= f.input :price, placeholder: "50" %>
         <%= f.input :photo, as: :attachinary %>
         <%= f.submit class:"btn btn-primary" %>
         <% end %>
