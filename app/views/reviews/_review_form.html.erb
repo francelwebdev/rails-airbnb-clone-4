@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row" style="margin-top:40px;">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="well well-sm">
+        <div class="text-right">
+          <%= link_to 'Leave a Review', '#reviews-anchor', class: 'btn btn-success btn-green', id: 'open-review-box' %>
+        </div>
+
+        <div class="row" id="post-review-box" style="display:none;">
+          <div class="col-md-12">
+          <%= simple_form_for [equipment, review] do |f| %>
+            <%= f.input :content, class: 'form-control animated', id: 'new-review', label: 'Tell us what you thought!', placeholder: 'Enter your review here...'%>
+            <%= f.input :rating, as: :hidden, id: 'ratings-hidden' %>
+            <div class="text-right">
+              <div class="stars starrr" data-rating="0"></div>
+              <%= f.submit "Submit", class: "btn btn-danger" %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
