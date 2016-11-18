@@ -54,6 +54,29 @@
   box-shadow: inherit;
 }
 
+.card-description-small {
+  position: absolute;
+  left: 0px;
+  center: inherit;
+  bottom: 0;
+  bottom: 16px;
+  left: 10px;
+  bottom: 10;
+  bottom: 0px;
+  left: 10px;
+  background-color: white;
+  text-shadow: none;
+  width: 358px;
+  padding-top: 11px;
+  margin-left: -10px;
+  box-shadow: inherit;
+}
+
+
+.card-description-small p {
+  color: black;
+}
+
 
 .card-description h2 {
   font-size: 24px;
@@ -134,4 +157,8 @@
 
 #popular {
   margin-top: -54px;
+}
+
+#equipment-title-small {
+  font-size: 17px;
 }
