@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :equipment do
     resources :rentals, only: [ :new, :create ]
-    resources :reviews, only [ :new, :create, :index ]
+    # resources :reviews, only [ :new, :create, :index ]
   end
 
   namespace :account do
