@@ -39,29 +39,28 @@
       </div>
     </div>
     <% end %>
+    <% unless @equipment.user == current_user %>
+    <div class="col-xs-12 col-sm-3">
+      <div class="card-header text-center", id="rent-header">
+        <form>
+          <div class="form-group">
+            <label for="start_date">Like this equipment?</label>
+          </div>
+          <hr>
+          <% unless current_user %>
+          <%= link_to "Rent now", new_user_session_path, class: "btn btn-danger"  %>
+          <p></p>
+          <% else %>
+          <%= link_to "Rent now", new_equipment_rental_path(@equipment), class: "btn btn-danger"  %>
+          <% end %>
+        </form>
+      </div>
+    </div>
+    <% end %>
     <hr>
     <div id="map" style="width: 100%; height: 500px;"></div>
   </div>
 </div>
-
-<% unless @equipment.user == current_user %>
-<div class="col-xs-12 col-sm-3">
-  <div class="card-header text-center", id="rent-header">
-    <form>
-      <div class="form-group">
-        <label for="start_date">Like this equipment?</label>
-      </div>
-      <hr>
-      <% unless current_user %>
-      <%= link_to "Rent now", new_user_session_path, class: "btn btn-danger"  %>
-      <p></p>
-      <% else %>
-      <%= link_to "Rent now", new_equipment_rental_path(@equipment), class: "btn btn-danger"  %>
-      <% end %>
-    </form>
-  </div>
-</div>
-<% end %>
 
 
 <% content_for(:after_js) do %>
