@@ -6,4 +6,5 @@
 //= require gmaps/google
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
+//= require bootstrap-datepicker
 //= require_tree .

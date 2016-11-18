@@ -7,17 +7,19 @@
             <h2>New Rental</h2>
             <hr>
           </div>
-          <%= simple_form_for [@equipment, @rental] do |f| %>
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
-          <%= f.submit "Rent", class: "btn btn-danger" %>
-
+          <%= simple_form_for [@equipment, @rental], remote: false, data: { price: @equipment.price } do |f| %>
+            <%= f.input :start_date, as: :string, input_html: { class: "datepicker" } %>
+            <%= f.input :end_date, as: :string, input_html: { class: "datepicker" } %>
+            <p id="total"></p>
+            <%= f.submit "Rent now!", class: "btn btn-danger text" %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
 
 
 
