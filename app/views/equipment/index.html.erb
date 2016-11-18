@@ -1,7 +1,6 @@
 <div class="wrapper-grey">
   <div class="container">
 
-
     <% if @equipment.present? %>
     <div class="title text-center">
       <h2>Available Equipment:</h2>
@@ -9,7 +8,7 @@
     <div class="row">
       <div class="col-xs-12 col-md-8">
         <% @equipment.each do |e| %>
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 col-md-6">
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path e.photo.path %>);">
             <div class="card-category"><%= e.title %></div>
             <div class="card-description">
@@ -25,22 +24,21 @@
         <div id="map-small" style="width: 100%; height: 400px;"></div>
       </div>
     </div>
+
+
+
+    <% else %>
+    <div class="wrapper-unavailable text-center">
+      <h3>Sorry, there is no equipment matching your criteria.</h3>
+      <p></p>
+      <hr>
+      <%= image_tag 'butters.png', width: 100 %>
+      <p></p>
+      <hr>
+      <p><%= link_to "Search again", root_path, class: 'btn btn-primary' %></p>
+    </div>
+    <% end %>
   </div>
-</div>
-
-
-<% else %>
-<div class="wrapper-unavailable text-center">
-  <h3>Sorry, there is no equipment matching your criteria.</h3>
-  <p></p>
-  <hr>
-  <%= image_tag 'butters.png', width: 100 %>
-  <p></p>
-  <hr>
-  <p><%= link_to "Search again", root_path, class: 'btn btn-primary' %></p>
-</div>
-<% end %>
-</div>
 </div>
 
 
