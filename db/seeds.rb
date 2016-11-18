@@ -20,7 +20,7 @@ bob.avatar_url = boburl
 
 # EQUIPMENT
 
-ampurl = "http://c1.zzounds.com/media/quality,85/AS100D_angle-c272c7a69dfddd3c67fe1497c181fdbd.jpg"
+ampurl = "http://da1urhpfd469z.cloudfront.net/uploads/advertphotos/16/0405/25216669-433-640x491.jpg"
 amp = Equipment.create(title: 'Sweet Amp', description: 'Marshall Amp', user: alex, address: "25 Cuff Point Columbia Road, E2 7PP, London", category: "Guitars", price: 50)
 amp.photo_url = ampurl
 
@@ -53,7 +53,7 @@ djurl = "http://www.jimlaabsmusic.com/images/uploads/karaoke/numark/Numark-NS7-D
 dj = Equipment.create(title: 'Turntable', description: 'Smooth sounding beats', user: josh, address: "White Hart Lane, London", price: 30)
 dj.photo_url = djurl
 
-keyboardurl = "https://static.roland.com/assets/images/products/gallery/fp-80-bk_angle_ks-18z_gal.jpg"
+keyboardurl = "https://digclassifieds.com/adpics/56fea18043ebf74c733d83924.jpg"
 keyboard = Equipment.create(title: 'Snazzy Keyboard', description: 'Sweet sounding keyboard', user: alex, address: "280 Upper Richmond Road, sw15 6tq", price: 70)
 keyboard.photo_url = keyboardurl
 
