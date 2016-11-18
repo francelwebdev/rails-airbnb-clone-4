@@ -15,8 +15,10 @@
           <div class="rental-body">
             <h3><%= r.equipment.title %></h3>
             <h4><%= r.equipment.description %></h4>
-            <p>Starting: <%= r.start_date %></p>
-            <p>Ending: <%= r.end_date %></p>
+            <p>Rent from: <%= r.start_date.strftime("%A, %b %d") %></p>
+            <p>Rent to: <%= r.end_date.strftime("%A, %b %d") %></p>
+<!--             <p>Owner: <%# r.owner %></p>
+ -->
           </div>
           <ul class="list-inline rental-controls hidden-sm hidden-xs">
             <li>
