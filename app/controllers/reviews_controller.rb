@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def new
     @review = Review.new
   end
@@ -17,7 +19,8 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = Review.all
+    @equipment = Equipment.find(params[:equipment_id])
+    redirect_to equipment_path(@equipment) # don't tell Seb
   end
 
   private
