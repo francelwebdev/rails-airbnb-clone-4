@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117182218) do
+ActiveRecord::Schema.define(version: 20161118113034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20161117182218) do
   end
 
   create_table "rentals", force: :cascade do |t|
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date     "start_date"
+    t.date     "end_date"
     t.integer  "equipment_id"
     t.integer  "user_id"
     t.datetime "created_at",   null: false
