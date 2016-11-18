@@ -16,8 +16,8 @@
 class Equipment < ApplicationRecord
 
 
-  scope :title, -> (title) { where title: title }
-  scope :address, -> (address) { where address: address }
+  # scope :title, -> (title) { where title: title }
+  # scope :address, -> (address) { where address: address }
   # scope :starts_with, -> (name) { where("name like ?", "#{name}%")}
 
 
@@ -36,6 +36,8 @@ class Equipment < ApplicationRecord
   # validates :category, presence: true
   # validates :available, presence: true
   validates :price, presence: true
+  validates :photo, presence: true
+
   # validates :user, presence: true
 
   def self.search(params)
