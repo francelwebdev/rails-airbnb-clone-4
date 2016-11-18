@@ -20,8 +20,6 @@
           <p></p>
           <li>Owner: </li><%= @equipment.user.first_name.capitalize + " " + @equipment.user.last_name.capitalize %>
           <p></p>
-          <li>Category: </li><%= @equipment.category %>
-          <p></p>
           <li>Price (per day):</li> £<%= @equipment.price %>
           <p></p>
           <li>Address: </li> <%= @equipment.address %>
@@ -56,10 +54,23 @@
         </form>
       </div>
     </div>
+
     <% end %>
     <hr>
     <div id="map" style="width: 100%; height: 500px;"></div>
-  </div>
+    <%= render 'reviews/review_form', equipment: @equipment, review: @review %>
+    <% @reviews.each do |review| %>
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2">
+        <div class="box-white">
+          <p><%= review.content %></p>
+          <p><strong><%= review.user.first_name.capitalize %></strong></p>
+          <div class="stars starrr", data-rating="<%= review.rating %>"></div>
+        </div>
+      </div>
+    </div>
+<% end %>
+</div>
 </div>
 
 

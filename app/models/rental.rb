@@ -14,6 +14,7 @@
 class Rental < ApplicationRecord
   belongs_to :equipment
   belongs_to :user
+  has_many :reviews
 
   validates :user, presence: true
   validates :equipment, presence: true
