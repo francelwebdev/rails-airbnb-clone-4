@@ -57,6 +57,24 @@ keyboardurl = "https://digclassifieds.com/adpics/56fea18043ebf74c733d83924.jpg"
 keyboard = Equipment.create(title: 'Snazzy Keyboard', description: 'Sweet sounding keyboard', user: alex, address: "280 Upper Richmond Road, sw15 6tq", price: 70)
 keyboard.photo_url = keyboardurl
 
+micurl = "https://www.raanetwork.org/media/Microphone-on-stage.jpg"
+mic = Equipment.create(title: 'Crisp sounding mic', description: 'Classically styled microphone', user: josh, address: "56 Baker Street, London, United Kingdom", price: 15)
+mic.photo_url = micurl
+
+pianourl = "http://cdn.wallpapersafari.com/36/64/4TL7yj.jpeg"
+piano = Equipment.create(title: 'Classical piano', description: 'Old piano but still sounds great', user: alex, address: "Stockwell, London", price: 105)
+piano.photo_url = pianourl
+
+guitar4url = "https://i.ytimg.com/vi/TcewiJGWFLo/maxresdefault.jpg"
+guitar4 = Equipment.create(title: 'Jazzy Guitar', description: 'For those that love the smooth sound of jazz', user: bob, address: "Ardara, Donegal", price: 34)
+guitar4.photo_url = guitar4url
+
+guitar5url = "http://cdn.mos.musicradar.com/images/artist-news/joe-bonamassa/joe-bonamassa-london-gallagher-guitar-970-80.jpg"
+guitar5 = Equipment.create(title: 'Rory Gallagher Guitar', description: 'Great sounding replica of Rory Gallaghers guitar', user: alex, address: "sheffiled", price: 20)
+guitar5.photo_url = guitar5url
+
+
+
 
 # Equipment.create(title: 'Acousting Guitar', description: 'Gibson acoustinc guitar')
 # Equipment.create(title: 'Bass Guitar', description: 'Some description')
