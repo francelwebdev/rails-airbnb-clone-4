@@ -12,11 +12,12 @@
       <div class="col-xs-12 col-sm-4", id="popular-card">
         <%= link_to (equipment_path(current_equipment)) do %>
         <% if current_equipment.photo? %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path current_equipment.photo.path %>);">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path current_equipment.photo.path, crop: "fill" %>);">
           <% else %>
           <div class="card">
             <% end %>
-            <div class="card-description">
+<!--             <div class="rating"><%# current_equipment.reviews.rating %></div>
+ -->            <div class="card-description">
               <h2><%= current_equipment.title %></h2>
               <p><%= current_equipment.description %></p>
             </div>

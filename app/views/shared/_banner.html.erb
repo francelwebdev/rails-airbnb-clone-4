@@ -1,11 +1,13 @@
 <div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(49, 112, 143, 0.3) 50%), url(<%= image_path 'banner.jpg' %>);">
   <div class="banner-content">
-  <h1>Rent music equipment</h1>
+    <h1>Rent music equipment</h1>
+    <h2>Play whenever, wherever. </h2>
+
     <div class="search-form">
       <%= form_tag(equipment_index_path, method: "get") do %>
-        <%= text_field_tag :title, nil, placeholder: "Drum Kit", class: "input-field" %>
-        <%= text_field_tag :address, nil, placeholder: "London", class: "input-field"  %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= text_field_tag :title, nil, placeholder: "Drum Kit", class: "input-field" %>
+      <%= text_field_tag :address, nil, placeholder: "London", class: "input-field"  %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>

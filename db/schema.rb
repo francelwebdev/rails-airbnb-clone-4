@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20161118120110) do
   end
 
   create_table "rentals", force: :cascade do |t|
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date     "start_date"
+    t.date     "end_date"
     t.integer  "equipment_id"
     t.integer  "user_id"
     t.datetime "created_at",   null: false
