@@ -42,7 +42,7 @@ drum = Equipment.create(title: 'Drum Kit', description: 'Yahama Drum Kit', user:
 drum.photo_url = drumurl
 
 violinurl = "https://static1.squarespace.com/static/550ba261e4b0215d222516fe/t/551ecffbe4b0ab1453852e8b/1428082690712/Electric+Violin.jpg?format=1500w"
-violin = Equipment.create(title: 'Unique Electric violin', description: 'So Cool, right?', user: josh, address: "Amstel Business Park, Amsterdam, Netherlands", price: 60)
+violin = Equipment.create(title: 'Unique Electric violin', description: 'So Cool, right?', user: josh, address: "Amstel Business Park, Amsterdam", price: 60)
 violin.photo_url = violinurl
 
 guitar2url = "http://i.dailymail.co.uk/i/pix/2016/06/11/00/15803B9E000005DC-3636155-image-m-62_1465600595045.jpg"
