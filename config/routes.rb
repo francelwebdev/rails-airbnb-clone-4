@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'reviews/index'
 
+  get '/terms', to: 'pages#terms'
+
   devise_for :users
 
   resources :equipment do

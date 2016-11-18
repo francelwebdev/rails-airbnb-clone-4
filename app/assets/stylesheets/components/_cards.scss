@@ -6,6 +6,7 @@
   position: relative;
   margin: 15px auto;
   border-radius: 3px;
+  box-shadow: 1px 2px 2px #CCCFCF;
 }
 
 .all-cards {
@@ -104,4 +105,8 @@
 
 #map-small {
   margin-top: 84px;
+}
+
+#popular {
+  margin-top: -54px;
 }
