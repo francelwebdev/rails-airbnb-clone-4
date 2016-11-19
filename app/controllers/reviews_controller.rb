@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user = current_user
     @equipment = Equipment.find(params[:equipment_id])
+    @review.equipment = @equipment
     if @review.save
       flash[:notice] = "Thanks for your review!"
     else

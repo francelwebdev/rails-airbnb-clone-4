@@ -5,4 +5,5 @@ class Review < ApplicationRecord
 
   validates :content, presence: true
   validates :rating, presence: true
+  validates :equipment_id, presence: true
 end
