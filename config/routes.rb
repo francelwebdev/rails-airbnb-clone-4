@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/terms', to: 'pages#terms'
+  get '/team', to: 'pages#team'
 
   devise_for :users
 

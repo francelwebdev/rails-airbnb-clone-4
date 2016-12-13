@@ -1,0 +1,23 @@
+.team-card {
+  border: 2px solid #454646;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px 0;
+  .team-img {
+    img {
+      width: 175px;
+    }
+  }
+  .person-links {
+    li {
+      font-size: 30px;
+      i {
+        transition: 0.4s ease;
+        color: #444545;
+        &:hover {
+          color: #3596E3;
+        }
+      }
+    }
+  }
+}
