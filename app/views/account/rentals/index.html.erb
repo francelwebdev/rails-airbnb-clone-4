@@ -7,10 +7,6 @@
       <% current_user.rentals.each do |r| %>
       <div class="col-xs-12">
         <div class="rental">
-          <div class='rental-upvote'>
-            <div class="rental-arrow"></div>
-            <div class='rental-count'>95</div>
-          </div>
           <%= cl_image_tag r.equipment.photo.path, class: 'rental-image hidden-xs' %>
           <div class="rental-body">
             <h3><%= r.equipment.title %></h3>
