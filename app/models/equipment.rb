@@ -36,6 +36,8 @@ class Equipment < ApplicationRecord
   # validates :category, presence: true
   # validates :available, presence: true
   validates :price, presence: true
+  validates :photo, presence: true
+
   # validates :user, presence: true
 
   def self.search(params)
